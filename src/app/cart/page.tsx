@@ -8,8 +8,10 @@ const Cart = () => {
   const [data, setData] = useState<DataType[]>([]);
 
   useEffect(() => {
-    const cartData = JSON.parse(`${localStorage.getItem("cart")}`) || [];
-    setData(cartData);
+    if (typeof window !== "undefined") {
+      const cartData = JSON.parse(`${localStorage.getItem("cart")}`) || [];
+      setData(cartData);
+    }
   }, []);
   return (
     <div>
