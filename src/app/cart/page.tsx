@@ -7,12 +7,6 @@ import React, { useEffect, useState } from "react";
 const Cart = () => {
   const [data, setData] = useState<DataType[]>([]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const cartData = JSON.parse(`${localStorage.getItem("cart")}`) || [];
-      setData(cartData);
-    }
-  }, []);
   return (
     <div>
       <div className="flex gap-2">
